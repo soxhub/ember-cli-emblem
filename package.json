@@ -39,5 +39,8 @@
   ],
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "dependencies": {
+    "broccoli-filter": "^0.1.11"
   }
 }
