@@ -1,25 +1,22 @@
 # Ember-cli-emblem-hbs-printer
 
-This README outlines the details of collaborating on this Ember addon.
+This is an ember-cli addon that brings support for
+[Emblem](http://emblemjs.com).
+
+This printer is based on version 0.5.0+ of Emblem. It compiles `.embl`
+and `.emblem` templates into Handlebars-syntax templates which will then
+be compiled as standard `.hbs` templates by ember-cli.
+
+Consequently, this addon should be compatible with old versions of Ember
+regardless of its template dependency, and support newer (HTMLBars)
+template compilation in ember-cli.
+
+If you are using the `broccoli-emblem-compiler` it should be removed
+before using this addon.
+
+Ember-CLI versions `0.1.x` are supported. Ember-CLI version `0.2.0` is
+not yet supported.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
-
-## Running
-
-* `ember server`
-* Visit your app at http://localhost:4200.
-
-## Running Tests
-
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+* `ember install:addon ember-cli-emblem-hbs-printer`
