@@ -22,7 +22,6 @@ TemplateCompiler.prototype.extensions = ['embl', 'emblem'];
 TemplateCompiler.prototype.targetExtension = 'hbs';
 
 TemplateCompiler.prototype.processString = function (string, relativePath) {
-  console.log('processing template: '+string);
   return this.compile(string);
 }
 
