@@ -34,7 +34,9 @@ module.exports = {
         return TemplateCompiler(tree);
       }
     };
+    this.app.registry.remove('template', 'broccoli-ember-hbs-template-compiler');
     this.app.registry.add('template', compiler, ['embl', 'emblem']);
+    this.app.registry.add('template', 'broccoli-ember-hbs-template-compiler', ['hbs', 'handlebars']);
   }
 
 };
