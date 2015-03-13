@@ -22,5 +22,5 @@ before using this addon: `npm uninstall --save-dev broccoli-emblem-compiler`.
 ## Ember-CLI support
 
   * Versions `0.1.x`: supported
-  * Versions `0.2.x`: not yet supported
+  * Versions `0.2.x`: supported
 
