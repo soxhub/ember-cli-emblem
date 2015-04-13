@@ -1,4 +1,4 @@
-# Ember-cli-emblem-hbs-printer
+# Ember-cli-emblem
 
 This is an ember-cli addon that brings support for
 [Emblem.js](http://emblemjs.com) templates.
