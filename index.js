@@ -27,13 +27,13 @@ TemplateCompiler.prototype.processString = function (string, relativePath) {
 }
 
 module.exports = {
-  name: 'ember-cli-emblem-hbs-printer',
+  name: 'ember-cli-emblem',
   shouldSetupRegistryInIncluded: function() {
     return !checker.isAbove(this, '0.2.0');
   },
   setupPreprocessorRegistry: function(type, registry) {
     var compiler = {
-      name: 'ember-cli-emblem-hbs-printer',
+      name: 'ember-cli-emblem',
       ext: ['embl', 'emblem'],
       toTree: function(tree) {
         return TemplateCompiler(tree);

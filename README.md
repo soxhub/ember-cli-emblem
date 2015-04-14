@@ -16,7 +16,7 @@ template compilation in ember-cli.
 If you are using the `broccoli-emblem-compiler` it should be removed
 before using this addon: `npm uninstall --save-dev broccoli-emblem-compiler`.
 
-* `ember install:addon ember-cli-emblem-hbs-printer`
+* `ember install:addon ember-cli-emblem`
 
 
 ## Ember-CLI support

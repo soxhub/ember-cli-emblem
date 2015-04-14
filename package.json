@@ -1,6 +1,6 @@
 {
-  "name": "ember-cli-emblem-hbs-printer",
-  "version": "0.2.2",
+  "name": "ember-cli-emblem",
+  "version": "0.2.4",
   "description": "The default blueprint for ember-cli addons.",
   "directories": {
     "doc": "doc",
@@ -11,7 +11,7 @@
     "build": "ember build",
     "test": "ember test"
   },
-  "repository": "https://github.com/Vestorly/ember-cli-emblem-hbs-printer",
+  "repository": "https://github.com/Vestorly/ember-cli-emblem",
   "engines": {
     "node": ">= 0.10.0"
   },
