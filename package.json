@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-emblem",
-  "version": "0.2.4",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.2.5",
+  "description": "An ember-cli addon for Emblem.js templates.",
   "directories": {
     "doc": "doc",
     "test": "tests"
