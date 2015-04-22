@@ -18,6 +18,17 @@ before using this addon: `npm uninstall --save-dev broccoli-emblem-compiler`.
 
 * `ember install ember-cli-emblem`
 
+## Blueprints
+
+ember-cli-emblem supports blueprint generation for routes, components, and templates. Use the `ember generate` command to add new Emblem templates.
+
+If you do not wish to use blueprints, an `emblemOptions` setting is available in your `config/environment.js`:
+
+```
+ENV.emblemOptions {
+	blueprints: false
+}
+```
 
 ## Ember-CLI support
 
