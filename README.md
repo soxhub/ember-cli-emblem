@@ -1,4 +1,4 @@
-# Ember-cli-emblem-hbs-printer
+# Ember-cli-emblem
 
 This is an ember-cli addon that brings support for
 [Emblem.js](http://emblemjs.com) templates.
@@ -16,8 +16,19 @@ template compilation in ember-cli.
 If you are using the `broccoli-emblem-compiler` it should be removed
 before using this addon: `npm uninstall --save-dev broccoli-emblem-compiler`.
 
-* `ember install:addon ember-cli-emblem-hbs-printer`
+* `ember install ember-cli-emblem`
 
+## Blueprints
+
+ember-cli-emblem supports blueprint generation for routes, components, and templates. Use the `ember generate` command to add new Emblem templates.
+
+If you do not wish to use blueprints, an `emblemOptions` setting is available in your `config/environment.js`:
+
+```
+ENV.emblemOptions {
+	blueprints: false
+}
+```
 
 ## Ember-CLI support
 
