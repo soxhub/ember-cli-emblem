@@ -19,7 +19,7 @@ function TemplateCompiler (inputTree, options) {
 
 TemplateCompiler.prototype = Object.create(Filter.prototype);
 TemplateCompiler.prototype.constructor = TemplateCompiler;
-TemplateCompiler.prototype.extensions = ['embl', 'emblem'];
+TemplateCompiler.prototype.extensions = ['embl', 'emblem', 'em'];
 TemplateCompiler.prototype.targetExtension = 'hbs';
 
 TemplateCompiler.prototype.processString = function (string, relativePath) {
@@ -34,7 +34,7 @@ module.exports = {
   setupPreprocessorRegistry: function(type, registry) {
     var compiler = {
       name: 'ember-cli-emblem',
-      ext: ['embl', 'emblem'],
+      ext: ['embl', 'emblem', 'em'],
       toTree: function(tree) {
         return TemplateCompiler(tree);
       }
