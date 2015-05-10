@@ -3,9 +3,9 @@
 This is an ember-cli addon that brings support for
 [Emblem.js](http://emblemjs.com) templates.
 
-This printer is based on version 0.5.0+ of Emblem. It compiles `.embl`
-and `.emblem` templates into Handlebars-syntax templates which will then
-be compiled as standard `.hbs` templates by ember-cli.
+This printer is based on version 0.5.0+ of Emblem. It compiles `.embl`,
+`.emblem` and `.em` templates into Handlebars-syntax templates which
+will then be compiled as standard `.hbs` templates by ember-cli.
 
 Consequently, this addon should be compatible with old versions of Ember
 regardless of its template dependency, and support newer (HTMLBars)
