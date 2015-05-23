@@ -3,6 +3,8 @@
 
 var Filter = require('broccoli-filter');
 var checker = require('ember-cli-version-checker');
+var path = require('path');
+var defaults = require('lodash').defaults;
 
 function TemplateCompiler (inputTree, options) {
   if (!(this instanceof TemplateCompiler)) {
@@ -30,6 +32,20 @@ module.exports = {
   name: 'ember-cli-emblem',
   shouldSetupRegistryInIncluded: function() {
     return !checker.isAbove(this, '0.2.0');
+  },
+  getConfig: function() {
+    var brocfileConfig = {};
+    var emblemOptions = defaults(this.project.config(process.env.EMBER_ENV).emblemOptions || {},
+      brocfileConfig, {
+        blueprints: true
+      });
+
+    return emblemOptions;
+  },
+  blueprintsPath: function() {
+    if (this.getConfig().blueprints) {
+      return path.join(__dirname, 'blueprints');
+    }
   },
   setupPreprocessorRegistry: function(type, registry) {
     var compiler = {
