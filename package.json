@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-emblem",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "An ember-cli addon for Emblem.js templates.",
   "directories": {
     "doc": "doc",
