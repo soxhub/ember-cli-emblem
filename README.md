@@ -11,6 +11,14 @@ Consequently, this addon should be compatible with old versions of Ember
 regardless of its template dependency, and support newer (HTMLBars)
 template compilation in ember-cli.
 
+## Supporting Ember 1.9.x projects / Handlebars 2.0
+The emblem dependency jump from 0.5.x to 0.6.x is breaking change for 
+projects that use Ember 1.9.x, and through ember-cli: 
+[ember-cli-htmlbars 0.6.x](https://github.com/ember-cli/ember-cli-htmlbars#handlebars-20-support) 
+Use ember-cli-emblem v0.2.x for Handlebars 2.0 support.
+
+
+
 ## Installation
 
 If you are using the `broccoli-emblem-compiler` it should be removed
