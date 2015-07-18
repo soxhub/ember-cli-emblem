@@ -19,6 +19,13 @@ module.exports = {
     }
   ],
 
+  _fixBlueprint: function(options) {
+    var blueprint = this.lookupBlueprint('route');
+    blueprint.ui = options.ui;
+
+    return blueprint;
+  },
+
   fileMapTokens: function() {
     return this.lookupBlueprint('route').fileMapTokens();
   },
@@ -32,7 +39,7 @@ module.exports = {
   },
 
   afterInstall: function(options) {
-    return this.lookupBlueprint('route').afterInstall(options);
+    return this._fixBlueprint(options).afterInstall(options);
   },
 
   beforeUninstall: function(options) {
@@ -40,6 +47,6 @@ module.exports = {
   },
 
   afterUninstall: function(options) {
-    return this.lookupBlueprint('route').afterUninstall(options);
+    return this._fixBlueprint(options).afterUninstall(options);
   }
 };
