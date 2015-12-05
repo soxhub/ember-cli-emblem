@@ -1,3 +1,7 @@
+[![Circle CI](https://circleci.com/gh/Vestorly/ember-cli-emblem/tree/master.svg?style=svg)](https://circleci.com/gh/Vestorly/ember-cli-emblem/tree/master)
+[![Dependency Status](https://david-dm.org/vestorly/ember-cli-emblem.svg?style=flat)](https://david-dm.org/vestorly/ember-cli-emblem)
+[![devDependency Status](https://david-dm.org/vestorly/ember-cli-emblem/dev-status.svg?style=flat)](https://david-dm.org/vestorly/ember-cli-emblem#info=devDependencies)
+
 # Ember-cli-emblem
 
 This is an ember-cli addon that brings support for
