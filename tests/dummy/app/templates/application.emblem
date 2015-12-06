@@ -1,3 +1,8 @@
 h2#title Welcome to Ember.js
 
+p.para This is a paragraph that compiles to Handlebars.js
+
+h4.header
+  | This is an h4
+
 outlet
