@@ -48,11 +48,12 @@ module.exports = {
     }
   },
   setupPreprocessorRegistry: function(type, registry) {
+    var addonContext = this;
     var compiler = {
       name: 'ember-cli-emblem',
       ext: ['embl', 'emblem', 'em'],
       toTree: function(tree) {
-        return TemplateCompiler(tree);
+        return TemplateCompiler(tree, addonContext.getConfig());
       }
     };
     registry.add('template', compiler);
