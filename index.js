@@ -4,7 +4,10 @@
 var Filter = require('broccoli-filter');
 var checker = require('ember-cli-version-checker');
 var path = require('path');
-var defaults = require('lodash').defaults;
+var _ = require('lodash');
+
+var defaults = _.defaults;
+var assign = _.assign;
 
 function TemplateCompiler (inputTree, options) {
   if (!(this instanceof TemplateCompiler)) {
@@ -17,6 +20,10 @@ function TemplateCompiler (inputTree, options) {
   this.inputTree = inputTree;
 
   this.compile = this.options.emblemCompiler || require('emblem').default.compile;
+  this.compilerOptions = defaults(options, {
+    quiet: false,
+    debugging: false
+  });
 }
 
 TemplateCompiler.prototype = Object.create(Filter.prototype);
@@ -25,7 +32,9 @@ TemplateCompiler.prototype.extensions = ['embl', 'emblem', 'em'];
 TemplateCompiler.prototype.targetExtension = 'hbs';
 
 TemplateCompiler.prototype.processString = function (string, relativePath) {
-  return this.compile(string);
+  var options = assign({}, this.compilerOptions, { file: relativePath });
+
+  return this.compile(string, options);
 }
 
 module.exports = {

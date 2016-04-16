@@ -16,11 +16,10 @@ regardless of its template dependency, and support newer (HTMLBars)
 template compilation in ember-cli.
 
 ## Supporting Ember 1.9.x projects / Handlebars 2.0
-The emblem dependency jump from 0.5.x to 0.6.x is breaking change for 
-projects that use Ember 1.9.x, and through ember-cli: 
-[ember-cli-htmlbars 0.6.x](https://github.com/ember-cli/ember-cli-htmlbars#handlebars-20-support) 
+The emblem dependency jump from 0.5.x to 0.6.x is breaking change for
+projects that use Ember 1.9.x, and through ember-cli:
+[ember-cli-htmlbars 0.6.x](https://github.com/ember-cli/ember-cli-htmlbars#handlebars-20-support)
 Use ember-cli-emblem v0.2.x for Handlebars 2.0 support.
-
 
 
 ## Installation
@@ -34,16 +33,24 @@ before using this addon: `npm uninstall --save-dev broccoli-emblem-compiler`.
 
 ember-cli-emblem supports blueprint generation for routes, components, and templates. Use the `ember generate` command to add new Emblem templates.
 
-If you do not wish to use blueprints, an `emblemOptions` setting is available in your `config/environment.js`:
+## Options
+
+ember-cli-emblem exposes a few instrumentation options for Emblem:
+
+  - `blueprints: false` if true, will disable blueprint generation.  (default: false);
+  - `quiet: false` if true, will quiet Emblem's deprecation notices.  (default: false)
+  - `debugging: false`  if true, will output the handlebars output of Emblem to STDOUT. (default: false)
+
+Simply add these to your `config/environment.js`:
 
 ```
 ENV.emblemOptions {
-	blueprints: false
+  blueprints: false
 }
 ```
+
 
 ## Ember-CLI support
 
   * Versions `0.1.x`: supported
   * Versions `0.2.x`: supported
-
