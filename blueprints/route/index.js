@@ -1,3 +1,5 @@
+var ancestralBlueprint = require('../../lib/ancestral-blueprint');
+
 module.exports = {
   description: 'Generates a route and registers it with the router',
 
@@ -20,22 +22,21 @@ module.exports = {
   ],
 
   _fixBlueprint: function(options) {
-    var blueprint = this.lookupBlueprint('route');
+    var blueprint = ancestralBlueprint('component', this.project);
     blueprint.ui = options.ui;
-
     return blueprint;
   },
 
   fileMapTokens: function() {
-    return this.lookupBlueprint('route').fileMapTokens();
+    return ancestralBlueprint('component', this.project).fileMapTokens();
   },
 
   beforeInstall: function(options) {
-    return this.lookupBlueprint('route').beforeInstall(options);
+    return ancestralBlueprint('component', this.project).beforeInstall(options);
   },
 
   shouldTouchRouter: function(name) {
-    return this.lookupBlueprint('route').shouldTouchRouter(name);
+    return ancestralBlueprint('component', this.project).shouldTouchRouter(name);
   },
 
   afterInstall: function(options) {
@@ -43,7 +44,7 @@ module.exports = {
   },
 
   beforeUninstall: function(options) {
-    return this.lookupBlueprint('route').beforeUninstall(options);
+    return ancestralBlueprint('component', this.project).beforeUninstall(options);
   },
 
   afterUninstall: function(options) {

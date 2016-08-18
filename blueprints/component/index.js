@@ -1,3 +1,5 @@
+var ancestralBlueprint = require('../../lib/ancestral-blueprint');
+
 module.exports = {
   description: 'Generates a component. Name must contain a hyphen.',
   availableOptions: [
@@ -11,9 +13,9 @@ module.exports = {
     }
   ],
   locals: function(options) {
-    return this.lookupBlueprint('component').locals(options);
+    return ancestralBlueprint('component', this.project).locals(options);
   },
   fileMapTokens: function() {
-    return this.lookupBlueprint('component').fileMapTokens();
+    return ancestralBlueprint('component', this.project).fileMapTokens();
   }
 };
