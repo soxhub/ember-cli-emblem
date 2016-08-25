@@ -22,21 +22,21 @@ module.exports = {
   ],
 
   _fixBlueprint: function(options) {
-    var blueprint = ancestralBlueprint('component', this.project);
+    var blueprint = ancestralBlueprint('route', this.project);
     blueprint.ui = options.ui;
     return blueprint;
   },
 
   fileMapTokens: function() {
-    return ancestralBlueprint('component', this.project).fileMapTokens();
+    return ancestralBlueprint('route', this.project).fileMapTokens();
   },
 
   beforeInstall: function(options) {
-    return ancestralBlueprint('component', this.project).beforeInstall(options);
+    return ancestralBlueprint('route', this.project).beforeInstall(options);
   },
 
   shouldTouchRouter: function(name) {
-    return ancestralBlueprint('component', this.project).shouldTouchRouter(name);
+    return ancestralBlueprint('route', this.project).shouldTouchRouter(name);
   },
 
   afterInstall: function(options) {
@@ -44,7 +44,7 @@ module.exports = {
   },
 
   beforeUninstall: function(options) {
-    return ancestralBlueprint('component', this.project).beforeUninstall(options);
+    return ancestralBlueprint('route', this.project).beforeUninstall(options);
   },
 
   afterUninstall: function(options) {
