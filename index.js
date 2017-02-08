@@ -4,10 +4,8 @@
 var Filter = require('broccoli-filter');
 var checker = require('ember-cli-version-checker');
 var path = require('path');
-var _ = require('lodash');
-
-var defaults = _.defaults;
-var assign = _.assign;
+var defaults = require('lodash.defaults');
+var assign = require('lodash.assign');
 
 function TemplateCompiler (inputTree, options) {
   if (!(this instanceof TemplateCompiler)) {
