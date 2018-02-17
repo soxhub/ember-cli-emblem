@@ -13,7 +13,7 @@
   },
   "repository": "https://github.com/Vestorly/ember-cli-emblem",
   "engines": {
-    "node": ">= 0.12.0"
+    "node": ">= 4.0.0"
   },
   "author": "201 Created",
   "license": "MIT",
