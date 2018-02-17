@@ -5,45 +5,27 @@ module.exports = {
       dependencies: { }
     },
     {
-      name: 'Ember 1.10',
-      dependencies: {
-        'ember': '1.10.0'
+      name: 'ember-lts-2.12',
+      npm: {
+        devDependencies: {
+          'ember-source': '~2.12.0'
+        }
       }
     },
     {
-      name: 'Ember 1.13.11',
-      dependencies: {
-        'ember': '1.13.11'
+      name: 'Ember 2.18.0',
+      npm: {
+        devDependencies: {
+          'ember-source': '~2.18.0'
+        }
       }
     },
     {
-      name: 'Ember 2.0.2',
-      dependencies: {
-        'ember': '2.0.2'
-      }
-    },
-    {
-      name: 'Ember 2.1.1',
-      dependencies: {
-        'ember': '2.1.1'
-      }
-    },
-    {
-      name: 'ember-release',
-      dependencies: {
-        'ember': 'components/ember#release'
-      },
-      resolutions: {
-        'ember': 'release'
-      }
-    },
-    {
-      name: 'ember-beta',
-      dependencies: {
-        'ember': 'components/ember#beta'
-      },
-      resolutions: {
-        'ember': 'beta'
+      name: 'Ember 3.0.0',
+      npm: {
+        devDependencies: {
+          'ember-source': '~3.0.0'
+        }
       }
     }
   ]
