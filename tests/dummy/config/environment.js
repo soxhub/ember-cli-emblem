@@ -1,15 +1,19 @@
-/* jshint node: true */
+'use strict';
 
 module.exports = function(environment) {
-  var ENV = {
+  let ENV = {
     modulePrefix: 'dummy',
-    environment: environment,
-    baseURL: '/',
+    environment,
+    rootURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+      },
+      EXTEND_PROTOTYPES: {
+        // Prevent Ember Data from overriding Date.parse.
+        Date: false
       }
     },
 
@@ -18,16 +22,6 @@ module.exports = function(environment) {
       // when it is created
     }
   };
-
-ENV.contentSecurityPolicy = {
-    'default-src': "'none'",
-    'script-src': "'self' 'unsafe-inline'",
-    'font-src': "'self'",
-    'connect-src': "'self'",
-    'img-src': "'self'",
-    'style-src': "'self'",
-    'media-src': "'self'"
-  }
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -39,7 +33,6 @@ ENV.contentSecurityPolicy = {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.baseURL = '/';
     ENV.locationType = 'none';
 
     // keep test console output quieter
@@ -47,10 +40,11 @@ ENV.contentSecurityPolicy = {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.autoboot = false;
   }
 
   if (environment === 'production') {
-
+    // here you can enable a production-specific feature
   }
 
   return ENV;

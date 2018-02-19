@@ -1,11 +1,11 @@
-/* jshint node: true */
 'use strict';
 
-var Filter = require('broccoli-filter');
-var checker = require('ember-cli-version-checker');
-var path = require('path');
-var defaults = require('lodash.defaults');
-var assign = require('lodash.assign');
+const Filter = require('broccoli-filter');
+const checker = require('ember-cli-version-checker');
+const path = require('path');
+const defaults = require('lodash.defaults');
+const assign = require('lodash.assign');
+const emblem = require('emblem').default;
 
 function TemplateCompiler (inputTree, options) {
   if (!(this instanceof TemplateCompiler)) {
@@ -17,7 +17,7 @@ function TemplateCompiler (inputTree, options) {
   this.options = options || {};
   this.inputTree = inputTree;
 
-  this.compile = this.options.emblemCompiler || require('emblem').default.compile;
+  this.compile = this.options.emblemCompiler || emblem.compile;
   this.compilerOptions = defaults(options, {
     quiet: false,
     debugging: false
@@ -30,46 +30,52 @@ TemplateCompiler.prototype.extensions = ['embl', 'emblem', 'em'];
 TemplateCompiler.prototype.targetExtension = 'hbs';
 
 TemplateCompiler.prototype.processString = function (string, relativePath) {
-  var options = assign({}, this.compilerOptions, { file: relativePath });
+  const options = assign({}, this.compilerOptions, { file: relativePath });
 
   return this.compile(string, options);
 }
 
 module.exports = {
   name: 'ember-cli-emblem',
-  shouldSetupRegistryInIncluded: function() {
+
+  shouldSetupRegistryInIncluded() {
     return !checker.isAbove(this, '0.2.0');
   },
-  getConfig: function() {
-    var brocfileConfig = {};
-    var emblemOptions = defaults(this.project.config(process.env.EMBER_ENV).emblemOptions || {},
+
+  getConfig() {
+    const brocfileConfig = {};
+    const emblemOptions = defaults(this.project.config(process.env.EMBER_ENV).emblemOptions || {},
       brocfileConfig, {
         blueprints: true
       });
 
     return emblemOptions;
   },
-  blueprintsPath: function() {
+
+  blueprintsPath() {
     if (this.getConfig().blueprints) {
       return path.join(__dirname, 'blueprints');
     }
   },
-  setupPreprocessorRegistry: function(type, registry) {
-    var addonContext = this;
-    var compiler = {
+
+  setupPreprocessorRegistry(type, registry) {
+    const addonContext = this;
+    const compiler = {
       name: 'ember-cli-emblem',
       ext: ['embl', 'emblem', 'em'],
-      toTree: function(tree) {
+      toTree(tree) {
         return TemplateCompiler(tree, addonContext.getConfig());
       }
     };
+
     registry.add('template', compiler);
   },
-  included: function(app){
+
+  included(app){
     this._super.included.apply(this, arguments);
+
     if (this.shouldSetupRegistryInIncluded()) {
       this.setupPreprocessorRegistry('parent', app.registry);
     }
   }
-
 };
