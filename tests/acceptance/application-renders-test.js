@@ -1,16 +1,17 @@
-import moduleForAcceptance from '../helpers/module-for-acceptance';
-import { test } from 'qunit';
-import $ from 'jquery';
+import { module, test } from 'qunit';
+import { setupApplicationTest } from 'ember-qunit';
+import { visit } from '@ember/test-helpers';
 
-moduleForAcceptance('Acceptance: ApplicationRendersTest', {
-});
+module('Acceptance: ApplicationRendersTest', function(hooks) {
+  setupApplicationTest(hooks);
 
-test('visiting /', async function(assert) {
-  assert.expect(3);
+  test('visiting /', async function(assert) {
+    assert.expect(3);
 
-  await visit('/');
+    await visit('/');
 
-  assert.equal($('h2#title').html(),"Welcome to Ember.js");
-  assert.equal($('p.para').html(), "This is a paragraph that compiles to Handlebars.js");
-  assert.equal($('h4.header').html(), "This is an h4");
+    assert.dom('h2#title').hasText("Welcome to Ember.js");
+    assert.dom('p.para').hasText( "This is a paragraph that compiles to Handlebars.js");
+    assert.dom('h4.header').hasText( "This is an h4");
+  });
 });

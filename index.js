@@ -1,7 +1,7 @@
 'use strict';
 
 const Filter = require('broccoli-filter');
-const checker = require('ember-cli-version-checker');
+const VersionChecker = require('ember-cli-version-checker');
 const path = require('path');
 const defaults = require('lodash.defaults');
 const assign = require('lodash.assign');
@@ -39,7 +39,10 @@ module.exports = {
   name: 'ember-cli-emblem',
 
   shouldSetupRegistryInIncluded() {
-    return !checker.isAbove(this, '0.2.0');
+    const checker = new VersionChecker(this);
+    const dep = checker.for('ember-cli');
+
+    return !dep.satisfies('>0.2.0');
   },
 
   getConfig() {
